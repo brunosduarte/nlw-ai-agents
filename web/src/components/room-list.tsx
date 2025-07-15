@@ -10,8 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card'
-import type { Dayjs } from 'dayjs'
-import type { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
 
 export function RoomList() {
   const { data, isLoading } = useRooms()
@@ -29,7 +27,7 @@ export function RoomList() {
           <p className="text-muted-foreground text-sm">Carregando salas...</p>
         )}
 
-        {data?.map((room: { id: Key | null | undefined; name: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; createdAt: string | number | Dayjs | Date | null | undefined; questionsCount: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined }) => {
+        {data?.map((room) => {
           return (
             <Link
               className="flex items-center justify-between rounded-lg border p-3 hover:bg-accent/50"
